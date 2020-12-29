@@ -32,3 +32,16 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui
+
+OPENCV_PATH = C:\opencv
+
+INCLUDEPATH += $${OPENCV_PATH}\build\include
+INCLUDEPATH += $${OPENCV_PATH}\build\include\opencv
+INCLUDEPATH += $${OPENCV_PATH}\build\include\opencv2
+
+CONFIG(debug, debug|release) {
+LIBS += $${OPENCV_PATH}\build\x64\vc15\lib\opencv_world412d.lib
+}
+else {
+LIBS += $${OPENCV_PATH}\build\x64\vc15\lib\opencv_world412.lib
+}
